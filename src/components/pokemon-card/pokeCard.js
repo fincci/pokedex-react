@@ -2,12 +2,10 @@ import './pokeCard.css'
 
 export const PokeCard = () => {
     return (
-        <div className='card'>
-            <picture>
-                <img src='' alt=''/>
-            </picture>
-            <p className='name'></p>
-            <span className='id'></span>
-        </div>
+        <li key={index} className={'card'}>
+            <img src={pokemon} alt={pokemon} />
+            <p className='name'>{pokemon.name}</p>
+            <span className='id'>{pokemon.id}</span>
+        </li>
     )
 }

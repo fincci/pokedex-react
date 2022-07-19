@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './pokeCards.css'
-import { PokeCard } from '../pokemon-card/pokeCard'
+// import { PokeCard } from '../pokemon-card/pokeCard'
 
 async function getData() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
@@ -8,38 +8,24 @@ async function getData() {
     return pokemons.results
 }
 
-// async function getPokemon(name) {
-//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-//     const pokeData = await response.json()
-//     return pokeData
-// }
-
-// function pokemonList(props) {
-//     <ul>
-//         {
-//             list.results.map((pokemon, index) => {
-//                 return (
-//                     <li key={index} className={'card'}>
-//                         <img src={pokemon} alt={pokemon} />
-//                         <p className='name'></p>
-//                         <span className='id'></span>
-//                     </li>
-//                 )
-//             })
-//         }
-//     </ul>
-// }
-
 const PokeList = (props) => {
     return (
         <ul>
             {
-                props.map((pokemon, index) => {
+                props.cards.map((pokemon, index) => {
+
+                    async function getPokemon(pokeUrl) {
+                        const response = await fetch(pokeUrl)
+                        return await response.json()
+                    }
+                    const pokeDetails = getPokemon(pokemon.url)
+                    console.log(pokeDetails);
+
                     return (
                         <li key={index} className={'card'}>
-                            <img src={pokemon} alt={pokemon} />
-                            <p className='name'></p>
-                            <span className='id'></span>
+                            {/* <img src={pokemon} alt={pokemon} />
+                            <p className='name'>{pokemon.name}</p>
+                            <span className='id'>{pokeDetails.id}</span> */}
                         </li>
                     )
                 })
@@ -49,27 +35,40 @@ const PokeList = (props) => {
 }
 
 
-const PokeCards = () => {
-    const [cards, setCards] = useState({
+const Pokemons = () => {
+    const [pokemons, setCards] = useState({
         cards: []
     })
 
-    useEffect( async () => {
-        const list = await getData()
-        // const pokeData = await getPokemon(list)
-        // console.log(pokeData);
-
-        setCards({
-            cards: list
-        })
-    })
+    useEffect(() => {
+        const fetchData = async () => {
+            const pokeArray = await getData()
+            setCards({
+                cards: pokeArray
+            })
+        }
+        fetchData()
+    }, [])
 
     return (
         <section>
-            <PokeList pokemons={cards.list}/>
+            <PokeList cards={pokemons.cards} />
+            {/* <ul>
+                {
+                    pokemons.cards.map((pokemon, index) => {
+                        return (
+                            <li key={index} className={'card'}>
+                                <img src={pokemon} alt={pokemon} />
+                                <p className='name'>{pokemon.name}</p>
+                                <span className='id'></span>
+                            </li>
+                        )
+                    })
+                }
+            </ul> */}
         </section>
     )
-    
+
 }
 
-export { PokeCards }
+export { Pokemons }

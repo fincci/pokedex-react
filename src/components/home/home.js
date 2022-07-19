@@ -1,11 +1,11 @@
 import './home.css'
-import { Header } from '../header/header'
-import { PokeCards } from '../poke-cards/pokeCards'
+// import { Header } from '../header/header'
+import { Pokemons } from '../poke-cards/pokeCards'
 
 export const Home = () => {
     return (
         <>
-        <PokeCards />
+        <Pokemons />
         </>
     )
 }
