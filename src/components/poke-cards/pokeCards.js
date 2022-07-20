@@ -8,24 +8,22 @@ async function getData() {
     return pokemons.results
 }
 
-const PokeList = (props) => {
+async function getPokemon(pokeUrl) {
+    const response = await fetch(pokeUrl)
+    return await response.json()
+}
+
+const PokeList = ({ pokemons }) => {
     return (
         <ul>
             {
-                props.cards.map((pokemon, index) => {
-
-                    async function getPokemon(pokeUrl) {
-                        const response = await fetch(pokeUrl)
-                        return await response.json()
-                    }
-                    const pokeDetails = getPokemon(pokemon.url)
-                    console.log(pokeDetails);
-
+                pokemons.map((pokemon, index) => {
+                    console.log(pokemon);
                     return (
                         <li key={index} className={'card'}>
                             {/* <img src={pokemon} alt={pokemon} />
                             <p className='name'>{pokemon.name}</p>
-                            <span className='id'>{pokeDetails.id}</span> */}
+                            <span className='id'>{pokemons.id}</span> */}
                         </li>
                     )
                 })
@@ -36,36 +34,24 @@ const PokeList = (props) => {
 
 
 const Pokemons = () => {
-    const [pokemons, setCards] = useState({
-        cards: []
-    })
+    const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
             const pokeArray = await getData()
-            setCards({
-                cards: pokeArray
+            const pokemons = pokeArray.map(async (pokemon) => {
+                await getPokemon(pokemon.url)
             })
+            const teste = await Promise.all(pokemons)
+            console.log(teste);
+            setPokemons()
         }
         fetchData()
     }, [])
 
     return (
         <section>
-            <PokeList cards={pokemons.cards} />
-            {/* <ul>
-                {
-                    pokemons.cards.map((pokemon, index) => {
-                        return (
-                            <li key={index} className={'card'}>
-                                <img src={pokemon} alt={pokemon} />
-                                <p className='name'>{pokemon.name}</p>
-                                <span className='id'></span>
-                            </li>
-                        )
-                    })
-                }
-            </ul> */}
+            <PokeList pokemons={pokemons} />
         </section>
     )
 
