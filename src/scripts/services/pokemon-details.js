@@ -1,8 +1,5 @@
-import { baseUrl } from "../variables";
-
-
-async function getPokemonDetails(pokeName) {
-    const response = await fetch(`${baseUrl}/${pokeName}`)
+async function getPokemonDetails(pokeUrl) {
+    const response = await fetch(pokeUrl)
     return await response.json()
 }
 
