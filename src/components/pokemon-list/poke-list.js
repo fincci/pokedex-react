@@ -21,15 +21,17 @@ const PokeList = () => {
     }, [])
 
     return (
-        <>
-            <ul>
-                {pokemons.map((pokemon, index) => {
-                    return (
-                        <PokeCard pokeInfo={pokemon} index={index} />
-                    )
-                })}
+        <section>
+            <ul className={'pokemon-list'}>
+                {
+                    pokemons.map((pokemon, index) => {
+                        return (
+                            <PokeCard pokeInfo={pokemon} key={index} />
+                        )
+                    })
+                }
             </ul>
-        </>
+        </section>
     )
 }
 
