@@ -1,10 +1,13 @@
-import { baseUrl, pokeQuantity } from "../variables";
+import { url } from "../variables"
 
 async function getPokeUrl() {
-    const response = await fetch(`${baseUrl}?limit=${pokeQuantity}`)
-    const responseJson = await response.json()
-    console.log(responseJson);
-    return await responseJson.results
+    const response = await fetch(url)
+    return await response.json()
 }
 
-export { getPokeUrl }
+async function getPokeUrlNext(nextUrl) {
+    const response = await fetch(nextUrl)
+    return await response.json()
+}
+
+export { getPokeUrl, getPokeUrlNext }
