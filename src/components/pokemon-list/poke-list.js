@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { PokeCard } from '../pokemon-card/poke-card'
-import { getPokeUrl } from '../../scripts/services/poke-url'
+import { getPokeUrl, getPokeUrlNext } from '../../scripts/services/poke-url'
 import { getPokemonDetails } from '../../scripts/services/pokemon-details'
-import { pokeOffset } from '../../scripts/variables'
 import { Button } from '../button/button'
+import { pokeOffset, pokeQuantity } from '../../scripts/variables'
 import './poke-list.css'
 
 
@@ -24,15 +24,25 @@ const PokeList = () => {
         fetchData()
     }, [])
 
-    // function loadMore(newPokemons) {
-    // setPokemons({
-    //     pokemons: pokemons.concat(newPokemons)
-    // })
-    // function changePokeOffsetVariable(pokeOffset) {
-    //     pokeOffset += 10
-    // }
-    // changePokeOffsetVariable()
-    // }
+    const [newPokemons, setNewPokemons] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const pokeArray = await getPokeUrl()
+            const nextPage = await getPokeUrlNext(pokeArray.next)
+            const pokemonsDetails = nextPage.results.map(async (pokemon) => {
+                return await getPokemonDetails(pokemon.url)
+            })
+            const pokemonsList = await Promise.all(pokemonsDetails)
+            setNewPokemons(pokemonsList)
+        }
+        fetchData()
+    }, [])
+
+    function addPokemons() {
+        setPokemons([...pokemons, ...newPokemons])
+        pokeOffset = pokeOffset + 10
+    }
 
     return (
         <section>
@@ -45,7 +55,7 @@ const PokeList = () => {
                     })
                 }
             </ul>
-            {/* <Button loadMore={loadMore} /> */}
+            <Button addPokemons={addPokemons} />
         </section>
     )
 }
