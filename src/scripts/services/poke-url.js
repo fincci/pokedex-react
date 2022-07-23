@@ -1,13 +1,8 @@
-import { url } from "../variables"
+import { baseUrl } from "../variables"
 
-async function getPokeUrl() {
-    const response = await fetch(url)
+const getPokeUrl = async (offset, limit = 10) => {
+    const response = await fetch(`${baseUrl}/?offset=${offset}&limit=${limit}`)
     return await response.json()
 }
 
-async function getPokeUrlNext(nextUrl) {
-    const response = await fetch(nextUrl)
-    return await response.json()
-}
-
-export { getPokeUrl, getPokeUrlNext }
+export { getPokeUrl }

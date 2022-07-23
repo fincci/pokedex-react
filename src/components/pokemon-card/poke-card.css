@@ -10,16 +10,19 @@
     box-shadow: 0px 67px 53px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     color: white;
+    padding: 10px;
 }
 
 .card:hover span {
-    height: 30px;
+    height: 22px;
+    padding: 2px 7px;
 }
 
 .img-container {
     display: flex;
     width: fit-content;
-    height: fit-content;
+    height: 50%;
+    align-items: flex-end;
 }
 
 .img-container img {
@@ -32,10 +35,18 @@
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    gap: 10px;
+}
+
+p {
+    font-size: 20px;
 }
 
 span {
     height: 0;
     overflow: hidden;
     transition: .3s ease-in-out;
+    background-color: white;
+    color: #82e982;
+    border-radius: 15px;
 }

@@ -1,7 +1,6 @@
-let pokeQuantity = 10
-let pokeOffset = 10
-const urlOptions = `?$offset=${pokeOffset}&limit=${pokeQuantity}`
-const url = `https://pokeapi.co/api/v2/pokemon${urlOptions}`
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+let limit = 10
+let offset = 0
+const baseUrl = `https://pokeapi.co/api/v2/pokemon`
+const url = `${baseUrl}/?offset=${offset}&limit=${limit}`
 
-export { url, urlOptions, pokeQuantity, pokeOffset, baseUrl }
+export { url, limit, offset, baseUrl }
