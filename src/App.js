@@ -1,12 +1,10 @@
 import './App.css';
-import { Header } from './components/header/header';
-import { PokeList } from './components/pokemon-list/poke-list';
+import { AppRoutes } from './pages/routes';
 
 function App() {
   return (
     <>
-      <Header />
-      <PokeList />
+      <AppRoutes />
     </>
   );
 }

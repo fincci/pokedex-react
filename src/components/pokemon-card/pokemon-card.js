@@ -1,4 +1,4 @@
-import './poke-card.css'
+import './pokemon-card.css'
 
 const PokeCard = ({ pokeInfo, index }) => {
     return (
