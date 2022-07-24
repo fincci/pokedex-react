@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { PokeCard } from '../pokemon-card/pokemon-card'
 import { getPokeUrl, getNextPokeUrl } from '../../scripts/services/poke-url'
 import { getPokemonDetails } from '../../scripts/services/pokemon-details'
@@ -49,7 +50,9 @@ const PokeList = () => {
                 {
                     pokemons.map((pokemon, index) => {
                         return (
+                            <Link to={`/pokemon/${pokemon.name}`} key={index}>
                             <PokeCard pokeInfo={pokemon} key={index} />
+                            </Link>
                         )
                     })
                 }

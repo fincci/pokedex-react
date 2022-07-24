@@ -42,7 +42,7 @@ p {
     font-size: 20px;
 }
 
-span {
+.id {
     height: 0;
     overflow: hidden;
     transition: .3s ease-in-out;

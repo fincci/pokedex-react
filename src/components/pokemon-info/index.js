@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getPokemon } from '../../scripts/services/poke-url'
 import { Ability } from '../abilities/ability'
 import './index.css'
@@ -21,6 +21,7 @@ const PokemonInfo = () => {
     if (pokeInfo.length !== 0) {
         return (
             <section>
+                <Link to='/'>Back</Link>
                 <div className={'header'}>
                     <h2 className={'name'}>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
