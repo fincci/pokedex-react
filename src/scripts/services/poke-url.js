@@ -1,22 +1,22 @@
 import { baseUrl } from "../variables"
 
 const getPokeUrl = async (limit) => {
-    const response = await fetch(`${baseUrl}/?limit=${limit}`)
+    const response = await fetch(`${baseUrl}/pokemon/?limit=${limit}`)
     return await response.json()
 }
 
 const getNextPokeUrl = async (offset, limit) => {
-    const response = await fetch(`${baseUrl}/?offset=${offset}&limit=${limit}`)
+    const response = await fetch(`${baseUrl}/pokemon/?offset=${offset}&limit=${limit}`)
     return await response.json()
 }
 
 const getPokemon  = async (name) => {
-    const response = await fetch(`${baseUrl}/${name}`)
+    const response = await fetch(`${baseUrl}/pokemon/${name}`)
     return await response.json()
 }
 
-const getAbility = async (abilityId) => {
-    const response = await fetch(`${baseUrl}/ability/${abilityId}`)
+const getAbility = async (url) => {
+    const response = await fetch(url)
     return await response.json()
 }
 

@@ -16,13 +16,8 @@ const PokemonInfo = () => {
             setPokeInfo(info)
         }
         fetchPokemonData()
-    }, [])
-
-    // console.log('pokeInfo', pokeInfo);
-    // console.log('object', Object.is(pokeInfo));
-    // console.log('array', Array.isArray(pokeInfo));
-    // console.log('length', pokeInfo.length);
-
+    }, [name])
+    
     if (pokeInfo.length !== 0) {
         return (
             <section>
@@ -30,6 +25,13 @@ const PokemonInfo = () => {
                     <h2 className={'name'}>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                     </h2>
+                    {pokeInfo.types.map((types) => {
+                        return (
+                        <span className={'type'}>
+                            {types.type.name}
+                        </span>
+                        )
+                    })}
                     <span className={'id'}>
                         {`#${pokeInfo.id.toString().padStart(3, '0')}`}
                     </span>
@@ -53,11 +55,13 @@ const PokemonInfo = () => {
                     <div className={'abilities'}>
                         <h3>Abilities</h3>
                         <ul>
-                            {pokeInfo.abilities.map((pokemon, index) => {
-                                return (
-                                    <Ability pokemon={pokemon} key={index} />
-                                )
-                            })}
+                            {
+                                pokeInfo.abilities.map((pokemon, index) => {
+                                    return (
+                                        <Ability pokemon={pokemon} key={index} />
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </div>
