@@ -1,4 +1,5 @@
 import './App.css';
+import './variables.css';
 import { AppRoutes } from './pages/routes';
 
 function App() {
