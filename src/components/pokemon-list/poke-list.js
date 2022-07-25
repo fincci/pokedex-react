@@ -45,7 +45,7 @@ const PokeList = () => {
     }
 
     return (
-        <section>
+        <section className='pokemons-section'>
             <ul className={'pokemon-list'}>
                 {
                     pokemons.map((pokemon, index) => {

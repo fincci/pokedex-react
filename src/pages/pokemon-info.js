@@ -1,11 +1,12 @@
-import { Header } from '../components/header/header'
+import { PokedexHud } from '../components/pokedex-hud/pokedex-hud'
 import { PokemonInfo } from '../components/pokemon-info'
 
 const Pokemon = () => {
     return (
         <>
-        <Header />
+        <PokedexHud>
         <PokemonInfo />
+        </PokedexHud>
         </>
     )
 }
