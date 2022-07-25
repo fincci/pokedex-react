@@ -6,7 +6,7 @@ import './index.css'
 
 const PokemonInfo = () => {
 
-    const [pokeInfo, setPokeInfo] = useState([])
+    const [pokeInfo, setPokeInfo] = useState({})
 
     const { name } = useParams()
 
@@ -18,7 +18,7 @@ const PokemonInfo = () => {
         fetchPokemonData()
     }, [name])
 
-    if (pokeInfo.length !== 0) {
+    if (Object.keys(pokeInfo).length !== 0) {
         return (
             <section>
                 <Link to='/'>Back</Link>
@@ -27,9 +27,9 @@ const PokemonInfo = () => {
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                     </h2>
                     {
-                        pokeInfo.types.map((types) => {
+                        pokeInfo.types.map((types, index) => {
                             return (
-                                <span className={'type'}>
+                                <span className={'type'} key={index}>
                                     {types.type.name}
                                 </span>
                             )
