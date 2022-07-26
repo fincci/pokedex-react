@@ -11,7 +11,7 @@ const Ability = ({ pokemon, index }) => {
             setAbility(abilityInfo)
         }
         fetchAbility()
-    }, [])
+    }, [pokemon.ability.url])
 
     if (ability !== undefined) {
         return (

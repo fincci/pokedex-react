@@ -1,6 +1,131 @@
 .pokedex {
     width: 100vw;
     height: 100vh;
-    padding: 100px 50px 50px;
+    padding: 0px 100px 100px;
     background-color: #DC0A2D;
+}
+
+.border {
+    width: 100%;
+    height: calc(100% - 120px);
+    padding: 0px 100px;
+    background-color: #DEDEDE;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+
+.border-top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: relative;
+}
+
+.border-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.top-style {
+    padding: 10px 0;
+}
+
+.ball-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DEDEDE;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: solid 2px black;
+}
+
+.ball-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28AAFE;
+    width: 93px;
+    height: 93px;
+    border-radius: 50%;
+    border: solid 2px black;
+}
+
+.ball-shadow {
+    background-color: #1c77b4;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.ball-inside {
+    display: flex;
+    background-color: #28AAFE;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px 0 0 5px;
+}
+
+.ball-white-dot {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px 0 0 5px;
+}
+
+.dots {
+    position: absolute;
+    display: flex;
+    gap: 50px;
+}
+
+.dot {
+    background-color: #DC0A2D;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: solid 2px black;
+}
+
+.bigger-dot {
+    background-color: #DC0A2D;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: solid 2px black;
+}
+
+.hamburger-container {
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger1, .hamburger2, .hamburger3 {
+    width: 30px;
+    height: 6px;
+    background-color: grey;
+    border-radius: 6px;
+    border: solid 2px black;
+    position: absolute;
+}
+
+.hamburger1 {
+    transform: translateY(-10px);
+}
+
+.hamburger3 {
+    transform: translateY(10px);
 }

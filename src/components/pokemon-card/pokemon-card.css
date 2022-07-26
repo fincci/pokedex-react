@@ -1,7 +1,7 @@
 .card {
     background-color: #82e982;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 .card .card-header {
     display: flex;
     justify-content: space-between;
-    width: 180px;
+    width: 160px;
 }
 
 .types {
@@ -59,6 +59,7 @@
 .img-container img {
     width: fit-content;
     height: fit-content;
+    max-height: 100px;
 }
 
 .name {
