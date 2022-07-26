@@ -32,7 +32,9 @@
 }
 
 .top-style {
+    display: flex;
     padding: 10px 0;
+    gap: 30px;
 }
 
 .ball-border {
@@ -79,6 +81,28 @@
     height: 20px;
     border-radius: 50%;
     margin: 5px 0 0 5px;
+}
+
+.top-dots {
+    display: flex;
+    gap: 30px;
+}
+
+.top-dot {
+    width: 20px;
+    height: 20px;
+    border: solid 2px black;
+    border-radius: 50%;
+}
+
+.dot1 {
+    background-color: red;
+}
+.dot2 {
+    background-color: yellow;
+}
+.dot3 {
+    background-color: #00ff00;
 }
 
 .dots {

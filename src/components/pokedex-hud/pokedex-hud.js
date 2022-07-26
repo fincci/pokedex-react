@@ -15,6 +15,11 @@ export const PokedexHud = () => {
                         </div>
                     </div>
                 </div>
+                <div className='top-dots'>
+                    <div className='top-dot dot1'></div>
+                    <div className='top-dot dot2'></div>
+                    <div className='top-dot dot3'></div>
+                </div>
             </div>
             <div className='border'>
                 <div className='border-top'>
