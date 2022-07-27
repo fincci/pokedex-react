@@ -26,41 +26,29 @@ const PokemonInfo = () => {
                     <img className='btn-back' src={arrow} />
                 </Link>
                 <div className='overview'>
-                    <div className={'header'}>
+                    <div className='info-types'>
                         {
                             pokeInfo.types.map((types, index) => {
                                 return (
-                                    <span className={'type'} key={index}>
-                                        {types.type.name}
+                                    <span className={'type'} key={index} style={{ backgroundColor: `var(--${types.type.name})` }}>
+                                        {types.type.name.substring(0, 1).toUpperCase()}{types.type.name.substring(1)}
                                     </span>
                                 )
                             })
                         }
-                        <span className={'id'}>
-                            {`#${pokeInfo.id.toString().padStart(3, '0')}`}
-                        </span>
                     </div>
-                    <picture className={'img-container'}>
+                    <picture className='info-img-container'>
                         <img src={pokeInfo.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={`Imagem de ${pokeInfo.name}`} />
                     </picture>
-                    <h2 className={'name'}>
+                    <h2 className='name'>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                     </h2>
+                    <span className='id'>
+                        {`#${pokeInfo.id.toString().padStart(3, '0')}`}
+                    </span>
                 </div>
-                <div className={'infos'}>
-                    <div className={'moves'}>
-                        <h3>Moves</h3>
-                        <ul className={'infos-move'}>
-                            {pokeInfo.moves.map((pokemon, index) => {
-                                return (
-                                    <li key={index}>
-                                        <p>{pokemon.move.name}</p>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className={'abilities'}>
+                <div className='infos'>
+                    <div className='abilities'>
                         <h3>Abilities</h3>
                         <ul>
                             {
@@ -70,6 +58,18 @@ const PokemonInfo = () => {
                                     )
                                 })
                             }
+                        </ul>
+                    </div>
+                    <div className='moves'>
+                        <h3>Moves</h3>
+                        <ul className='infos-move'>
+                            {pokeInfo.moves.map((pokemon, index) => {
+                                return (
+                                    <li key={index}>
+                                        <p>{pokemon.move.name.substring(0, 1).toUpperCase()}{pokemon.move.name.substring(1)}</p>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                 </div>

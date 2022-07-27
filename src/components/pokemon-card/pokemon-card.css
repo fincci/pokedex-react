@@ -19,7 +19,7 @@
     width: 160px;
 }
 
-.types {
+.card-header .types {
     display: flex;
     height: 0;
     overflow: hidden;
