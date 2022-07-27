@@ -50,7 +50,7 @@ const PokemonInfo = () => {
                 <div className='infos'>
                     <div className='abilities'>
                         <h3>Abilities</h3>
-                        <ul>
+                        <ul className='abilities-list'>
                             {
                                 pokeInfo.abilities.map((pokemon, index) => {
                                     return (

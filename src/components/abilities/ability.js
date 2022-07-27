@@ -15,9 +15,9 @@ const Ability = ({ pokemon, index }) => {
 
     if (ability !== undefined) {
         return (
-            <li key={index}>
-                <p className={'infos-name'}>{pokemon.ability.name.substring(0, 1).toUpperCase()}{pokemon.ability.name.substring(1)}</p>
-                <p className={'infos-desc'}>{ability.effect_entries[1].effect}</p>
+            <li className='ability' key={index}>
+                <p className={'ability-name'}>{pokemon.ability.name.substring(0, 1).toUpperCase()}{pokemon.ability.name.substring(1)}</p>
+                <p className={'ability-desc'}>{ability.effect_entries[1].effect}</p>
             </li>
         )
     }
