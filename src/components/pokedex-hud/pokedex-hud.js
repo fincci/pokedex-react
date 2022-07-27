@@ -2,7 +2,7 @@ import './pokedex-hud.css'
 import pokeball from '../../assets/pokeball.png'
 import { PokeList } from '../pokemon-list/poke-list'
 
-export const PokedexHud = () => {
+export const PokedexHud = ({ children }) => {
     return (
         <main className='main'>
             <div className='pokedex'>
@@ -29,7 +29,7 @@ export const PokedexHud = () => {
                             <div className='dot'></div>
                         </div>
                     </div>
-                    <PokeList />
+                    <div className='children'>{children}</div>
                     <div className='border-bottom'>
                         <div className='bigger-dot'></div>
                         <div className='hamburger-container'>

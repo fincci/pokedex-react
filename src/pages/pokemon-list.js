@@ -4,9 +4,9 @@ import { PokeList } from "../components/pokemon-list/poke-list";
 const PokemonList = () => {
     return (
         <>
-        <PokedexHud>
-        <PokeList />
-        </PokedexHud>
+            <PokedexHud>
+                <PokeList />
+            </PokedexHud>
         </>
     )
 }

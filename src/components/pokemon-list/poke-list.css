@@ -15,7 +15,7 @@
     background-size: cover;
     border-radius: 10px;
     border: solid 2px black;
-    height: calc(100% - (2 * var(--list-border)) );
+    height: 100%;
 }
 
 ::-webkit-scrollbar {

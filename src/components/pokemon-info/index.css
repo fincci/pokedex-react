@@ -1,3 +1,33 @@
+.pokemon-info {
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: row;
+    align-items: center;
+    background: url('../../assets/pokedexBg.jpg') center center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 2px black;
+    height: 100%;
+    position: relative;
+}
+
+.link-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.btn-back {
+    transform: rotate(180deg);
+    width: 20px;
+}
+
+
+
 .infos {
     display: flex;
+}
+
+.infos-move {
+    display: grid;
 }

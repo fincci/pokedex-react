@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getPokemon } from '../../scripts/services/poke-url'
 import { Ability } from '../abilities/ability'
+import arrow from '../../assets/arrow.png'
 import './index.css'
 
 const PokemonInfo = () => {
@@ -18,40 +19,42 @@ const PokemonInfo = () => {
         fetchPokemonData()
     }, [name])
 
-    console.log(Object.keys(pokeInfo).length !== 0);
-
     if (Object.keys(pokeInfo).length !== 0) {
         return (
-            <section>
-                <Link to='/'>Back</Link>
-                <div className={'header'}>
+            <section className='pokemon-info'>
+                <Link className='link-back' to='/'>
+                    <img className='btn-back' src={arrow} />
+                </Link>
+                <div className='overview'>
+                    <div className={'header'}>
+                        {
+                            pokeInfo.types.map((types, index) => {
+                                return (
+                                    <span className={'type'} key={index}>
+                                        {types.type.name}
+                                    </span>
+                                )
+                            })
+                        }
+                        <span className={'id'}>
+                            {`#${pokeInfo.id.toString().padStart(3, '0')}`}
+                        </span>
+                    </div>
+                    <picture className={'img-container'}>
+                        <img src={pokeInfo.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={`Imagem de ${pokeInfo.name}`} />
+                    </picture>
                     <h2 className={'name'}>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                     </h2>
-                    {
-                        pokeInfo.types.map((types, index) => {
-                            return (
-                                <span className={'type'} key={index}>
-                                    {types.type.name}
-                                </span>
-                            )
-                        })
-                    }
-                    <span className={'id'}>
-                        {`#${pokeInfo.id.toString().padStart(3, '0')}`}
-                    </span>
                 </div>
-                <picture className={'img-container'}>
-                    <img src={pokeInfo.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={`Imagem de ${pokeInfo.name}`} />
-                </picture>
                 <div className={'infos'}>
                     <div className={'moves'}>
                         <h3>Moves</h3>
-                        <ul>
+                        <ul className={'infos-move'}>
                             {pokeInfo.moves.map((pokemon, index) => {
                                 return (
                                     <li key={index}>
-                                        <p className={'infos-name'}>{pokemon.move.name}</p>
+                                        <p>{pokemon.move.name}</p>
                                     </li>
                                 )
                             })}
