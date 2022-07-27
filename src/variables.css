@@ -17,4 +17,9 @@
     --dark: #705848;
     --steel: #B8B8D0;
     --fairy: #ee99ac;
+    
+    --list-border: 60px;
+    --pokedex-border: 60px;
+    --background-paddingX: 20%;
+    --background-paddingY: 5%;
 }

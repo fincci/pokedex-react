@@ -8,14 +8,14 @@
 
 .pokemons-section {
     display: flex;
+    overflow-y: scroll;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
     background: url('../../assets/pokedexBg.jpg') center center no-repeat;
     background-size: cover;
     border-radius: 10px;
     border: solid 2px black;
-    height: calc(100% - 100px - 100px);
+    height: calc(100% - (2 * var(--list-border)) );
 }
 
 ::-webkit-scrollbar {

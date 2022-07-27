@@ -1,16 +1,25 @@
-.pokedex {
+.main {
+    background: url('../../assets/bg.png');
     width: 100vw;
     height: 100vh;
-    padding: 0px 100px 100px;
-    background-color: #DC0A2D;
+    padding: var(--background-paddingY) var(--background-paddingX);
+}
+
+.pokedex {
+    height: 100%;
+    padding: 0px var(--pokedex-border) var(--pokedex-border);
+    background-color: #ce0627;
+    border-radius: 10px;
+    border: solid 2px black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .border {
     width: 100%;
-    height: calc(100% - 120px);
-    padding: 0px 100px;
+    height: calc(100% - (2 * var(--list-border)));
+    padding: 0px var(--list-border);
     background-color: #DEDEDE;
-    border-radius: 20px;
+    border-radius: 10px;
     border: solid 2px black;
 }
 
@@ -19,7 +28,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: var(--list-border);
     position: relative;
 }
 
@@ -28,7 +37,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: var(--list-border);
 }
 
 .top-style {
@@ -98,9 +107,11 @@
 .dot1 {
     background-color: red;
 }
+
 .dot2 {
     background-color: yellow;
 }
+
 .dot3 {
     background-color: #00ff00;
 }
@@ -137,7 +148,9 @@
     align-items: center;
 }
 
-.hamburger1, .hamburger2, .hamburger3 {
+.hamburger1,
+.hamburger2,
+.hamburger3 {
     width: 30px;
     height: 6px;
     background-color: grey;

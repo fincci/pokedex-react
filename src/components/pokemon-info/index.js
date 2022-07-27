@@ -18,6 +18,8 @@ const PokemonInfo = () => {
         fetchPokemonData()
     }, [name])
 
+    console.log(Object.keys(pokeInfo).length !== 0);
+
     if (Object.keys(pokeInfo).length !== 0) {
         return (
             <section>
