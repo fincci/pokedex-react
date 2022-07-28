@@ -28,7 +28,7 @@
 
 .card:hover .types {
     height: 24px;
-    transition: .1s ease-in-out;
+    transition: .25s ease-in-out;
 }
 
 .type {

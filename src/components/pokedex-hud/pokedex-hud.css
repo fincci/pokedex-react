@@ -1,5 +1,6 @@
 .main {
-    background: url('../../assets/bg.png');
+    background: url('../../assets/bg.png') center center no-repeat;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     padding: var(--background-paddingY) var(--background-paddingX);

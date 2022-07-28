@@ -38,7 +38,7 @@ const PokemonInfo = () => {
                         }
                     </div>
                     <picture className='info-img-container'>
-                        <img src={pokeInfo.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={`Imagem de ${pokeInfo.name}`} />
+                        <img src={pokeInfo.sprites.other.dream_world.front_default} alt={`Imagem de ${pokeInfo.name}`} />
                     </picture>
                     <h2 className='name'>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}

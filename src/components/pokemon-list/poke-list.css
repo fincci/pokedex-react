@@ -1,11 +1,3 @@
-.pokemon-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
 .pokemons-section {
     display: flex;
     overflow-y: scroll;
@@ -16,6 +8,14 @@
     border-radius: 10px;
     border: solid 2px black;
     height: 100%;
+}
+
+.pokemon-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
 ::-webkit-scrollbar {
