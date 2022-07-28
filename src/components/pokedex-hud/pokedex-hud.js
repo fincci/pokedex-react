@@ -34,6 +34,7 @@ export const PokedexHud = ({ children }) => {
                             <div className='hamburger1'></div>
                             <div className='hamburger2'></div>
                             <div className='hamburger3'></div>
+                            <div className='hamburger4'></div>
                         </div>
                     </div>
                 </div>

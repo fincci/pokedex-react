@@ -25,7 +25,7 @@ const PokeCard = ({ pokeInfo, index }) => {
 
     if (bgGradient.length || bgFlat !== 0) {
         return (
-            <li key={index} className='card' style={pokeInfo.types.length === 1 ? {backgroundColor: bgFlat} : {backgroundImage:`linear-gradient(90deg,${bgGradient})`}}>
+            <li key={index} className='card' style={pokeInfo.types.length === 1 ? { backgroundColor: bgFlat } : { backgroundImage: `linear-gradient(90deg,${bgGradient})` }}>
                 <div className='card-header'>
                     <div className='types'>
                         {

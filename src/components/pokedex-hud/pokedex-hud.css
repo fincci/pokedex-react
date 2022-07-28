@@ -86,7 +86,7 @@
 }
 
 .children {
-    height: calc(100% - (2 * var(--list-border)) );
+    height: calc(100% - (2 * var(--list-border)));
 }
 
 .border-bottom {
@@ -145,29 +145,46 @@
 
 .hamburger-container {
     display: flex;
-    position: relative;
     width: 30px;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3px;
 }
 
 .hamburger1,
 .hamburger2,
-.hamburger3 {
+.hamburger3,
+.hamburger4 {
     width: 30px;
-    height: 6px;
-    background-color: grey;
-    border-radius: 6px;
-    border: solid 2px black;
-    position: absolute;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
 }
 
-.hamburger1 {
-    transform: translateY(-10px);
+@media (max-width: 1600px) {
+    .pokedex {
+        padding: 0 calc(var(--pokedex-border) - 20px) calc(var(--pokedex-border) - 20px);
+    }
+
+    .border {
+        padding: 0 calc(var(--list-border) - 20px);
+    }
 }
 
-.hamburger3 {
-    transform: translateY(10px);
+@media (max-width: 1450px) {
+    .pokedex {
+        padding: 0 calc(var(--pokedex-border) - 40px) calc(var(--pokedex-border) - 40px);
+    }
+
+    .border {
+        padding: 0 calc(var(--list-border) - 40px);
+    }
+}
+
+@media (max-width: 1150px) {
+    .main {
+    padding: var(--background-paddingY) calc(var(--background-paddingX) - 14%);
+    }
 }

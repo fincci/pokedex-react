@@ -50,7 +50,7 @@ const PokeList = () => {
                 {
                     pokemons.map((pokemon, index) => {
                         return (
-                            <Link to={`/pokemon/${pokemon.name}`} key={index}>
+                            <Link className='pokecard-link' to={`/pokemon/${pokemon.name}`} key={index}>
                                 <PokeCard pokeInfo={pokemon} key={index} />
                             </Link>
                         )

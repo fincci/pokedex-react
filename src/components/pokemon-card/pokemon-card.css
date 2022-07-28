@@ -1,8 +1,6 @@
 .card {
-    background-color: #82e982;
-    width: 180px;
-    height: 180px;
-    margin: 20px;
+    width: var(--card-size);
+    height: var(--card-size);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,26 +14,31 @@
 .card .card-header {
     display: flex;
     justify-content: space-between;
-    width: 160px;
+    width: 100%;
+    font-weight: 900;
 }
 
 .card-header .types {
     display: flex;
-    height: 0;
+    font-weight: 400;
+    font-size: 10px;
+    /* height: 0; */
     overflow: hidden;
     gap: 5px;
 }
 
 .card:hover .types {
-    height: 24px;
+    height: 100%;
     transition: .25s ease-in-out;
 }
 
 .type {
+    display: flex;
+    align-items: center;
     color: black;
     background-color: white;
     opacity: .7;
-    padding: 5px 10px;
+    padding: 0px 10px;
     border-radius: 15px;
     font-size: 12px;
 }
@@ -64,4 +67,53 @@
 
 .name {
     font-size: 25px;
+}
+
+@media (max-width: 1300px) {
+    .card {
+        width: calc(var(--card-size) - 30px);
+        height: calc(var(--card-size) - 30px);
+    }
+
+    .type {
+        padding: 0 5px;
+    }
+
+    .img-container {
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 535px) {
+    .pokecard-link {
+        width: 100%;
+    }
+    
+    .card {
+        width: 100%;
+        margin: 0;
+        align-items: baseline;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .id {
+        position: absolute;
+        right: 10px;
+    }
+
+    .type {
+        padding: 5px 10px;
+    }
+
+    .img-container {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .name {
+        width: 50%;
+    }
 }
