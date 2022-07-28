@@ -14,10 +14,15 @@ const Ability = ({ pokemon, index }) => {
     }, [pokemon.ability.url])
 
     if (ability !== undefined) {
+
         return (
-            <li className='ability' key={index}>
-                <p className={'ability-name'}>{pokemon.ability.name.substring(0, 1).toUpperCase()}{pokemon.ability.name.substring(1)}</p>
-                <p className={'ability-desc'}>{ability.effect_entries[1].effect}</p>
+            <li className='ability'>
+                <p className='ability-name'>{pokemon.ability.name.substring(0, 1).toUpperCase()}{pokemon.ability.name.substring(1)}</p>
+                {ability.effect_entries.map((e, index) => {
+                    if (e.language.name === 'en') {
+                        return <p className='ability-desc' key={index}>{e.effect}</p>
+                    }
+                })}
             </li>
         )
     }

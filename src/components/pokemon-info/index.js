@@ -43,7 +43,7 @@ const PokemonInfo = () => {
                     <h2 className='name'>
                         {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                     </h2>
-                    <span className='id'>
+                    <span className='info-id'>
                         {`#${pokeInfo.id.toString().padStart(3, '0')}`}
                     </span>
                 </div>

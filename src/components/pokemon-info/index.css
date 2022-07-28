@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-size: cover;
     border-radius: 10px;
     border: solid 2px black;
@@ -39,7 +39,9 @@
 .overview {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    height: 60%;
+    width: 30%;
+    min-width: 250px;
     justify-content: center;
     align-items: center;
 }
@@ -48,21 +50,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
-    margin: 30px 0;
+    width: 100%;
+    min-width: 250px;
+    height: 100%;
 }
 
 .info-img-container img {
     width: fit-content;
     height: fit-content;
+    transform: scale(2.5);
 }
 
 .info-types {
     display: flex;
-    justify-content: space-between;
-    width: 100px;
+    width: 250px;
     gap: 10px;
+    padding-left: 10px;
 }
 
 .info-types .type {
@@ -73,19 +76,24 @@
 .infos {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     height: 100%;
     max-width: 600px;
+    padding: 20px;
 }
 
 .abilities {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 50%;
+    min-height: 30%;
+    overflow-y: scroll;
+    padding-right: 5px;
 }
 
 .abilities-list {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -99,6 +107,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 250px;
 }
 
 .ability-name {
@@ -108,17 +117,18 @@
 
 .ability-desc {
     font-size: 12px;
-    max-width: 300px;
     text-align: justify;
 }
 
 .moves {
     overflow-y: scroll;
-    height: 50%;
+    padding-right: 5px;
+    max-height: 60%;
 }
 
 .infos-move {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     font-size: 12px;
+    gap: 5px;
 }
