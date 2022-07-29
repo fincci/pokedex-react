@@ -18,6 +18,11 @@
 .top-style {
     display: flex;
     padding: 10px 0;
+    justify-content: space-between;
+}
+
+.left-details {
+    display: flex;
     gap: 30px;
 }
 

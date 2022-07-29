@@ -1,13 +1,35 @@
+.children {
+    position: relative;
+    z-index: 0;
+}
+
 .pokemons-section {
     display: flex;
+    height: 100%;
+    width: 100%;
     overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.pokemons-section::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background: url('../../assets/pokedexBg.jpg') center center no-repeat;
     background-size: cover;
     border-radius: 10px;
     border: solid 2px black;
-    height: 100%;
+    z-index: -1;
+    filter: brightness(.8);
 }
 
 .pokemon-list {

@@ -1,3 +1,4 @@
+import { ThemeTogglerBtn } from '../theme-toggler-btn/theme-toggler-btn'
 import './pokedex-hud.css'
 
 export const PokedexHud = ({ children }) => {
@@ -5,20 +6,23 @@ export const PokedexHud = ({ children }) => {
         <main className='main'>
             <div className='pokedex'>
                 <div className='top-style'>
-                    <div className='ball-border'>
-                        <div className='ball-dot'>
-                            <div className='ball-shadow'>
-                                <div className='ball-inside'>
-                                    <div className='ball-white-dot'></div>
+                    <div className='left-details'>
+                        <div className='ball-border'>
+                            <div className='ball-dot'>
+                                <div className='ball-shadow'>
+                                    <div className='ball-inside'>
+                                        <div className='ball-white-dot'></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div className='top-dots'>
+                            <div className='top-dot dot1'></div>
+                            <div className='top-dot dot2'></div>
+                            <div className='top-dot dot3'></div>
+                        </div>
                     </div>
-                    <div className='top-dots'>
-                        <div className='top-dot dot1'></div>
-                        <div className='top-dot dot2'></div>
-                        <div className='top-dot dot3'></div>
-                    </div>
+                    <ThemeTogglerBtn />
                 </div>
                 <div className='border'>
                     <div className='border-top'>

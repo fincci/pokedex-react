@@ -1,0 +1,44 @@
+.theme-toggler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-toggler:hover .theme-name{
+    opacity: 1;
+}
+
+.theme-btn {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.theme-name {
+    position: relative;
+    font-size: 15px;
+    display: block;
+    background-color: #eee;
+    padding: 5px;
+    opacity: .3;
+    animation: wiggle .5s infinite alternate;
+    transition: .3s;
+}
+
+.theme-name::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+}
+
+@keyframes wiggle {
+    from { transform: translate(0);}
+    to { transform: translateY(-5px);}
+}

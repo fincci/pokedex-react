@@ -22,7 +22,7 @@
     display: flex;
     font-weight: 400;
     font-size: 10px;
-    /* height: 0; */
+    height: 0;
     overflow: hidden;
     gap: 5px;
 }
@@ -45,10 +45,10 @@
 
 .id {
     height: 27px;
-    color: black;
     opacity: .7;
     padding: 5px 0px;
     font-size: 12px;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.411));
 }
 
 .img-container {
@@ -67,6 +67,7 @@
 
 .name {
     font-size: 25px;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.8));
 }
 
 @media (max-width: 1300px) {
