@@ -49,6 +49,7 @@
 }
 
 .ball-shadow {
+    display: flex;
     background-color: #1c77b4;
     width: 80px;
     height: 80px;
@@ -61,7 +62,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin: 5px 0 0 5px;
+    margin: 5px;
 }
 
 .ball-white-dot {
@@ -69,7 +70,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin: 5px 0 0 5px;
+    margin: 5px;
 }
 
 .border {

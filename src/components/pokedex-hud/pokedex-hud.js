@@ -1,17 +1,22 @@
 import { ThemeTogglerBtn } from '../theme-toggler-btn/theme-toggler-btn'
+import { ThemeContext, themes } from "../../contexts/theme-context"
 import './pokedex-hud.css'
+import React, { useContext } from 'react'
 
 export const PokedexHud = ({ children }) => {
+    
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <main className='main'>
-            <div className='pokedex'>
+        <main className='main' style={{ background: theme.main.background}}>
+            <div className='pokedex' style={{ backgroundColor: theme.pokedexHud.background }}>
                 <div className='top-style'>
                     <div className='left-details'>
-                        <div className='ball-border'>
-                            <div className='ball-dot'>
-                                <div className='ball-shadow'>
-                                    <div className='ball-inside'>
-                                        <div className='ball-white-dot'></div>
+                        <div className='ball-border' style={{ backgroundColor: theme.pokedexHud.border.background }}>
+                            <div className='ball-dot' style={{ backgroundColor: theme.pokedexHud.ball.background}}>
+                                <div className='ball-shadow' style={{ backgroundColor: theme.pokedexHud.ball.ballShadow.background, justifyContent: theme.pokedexHud.ball.justify}}>
+                                    <div className='ball-inside' style={{ backgroundColor: theme.pokedexHud.ball.background, justifyContent: theme.pokedexHud.ball.justify}}>
+                                        <div className='ball-white-dot' style={{ backgroundColor: theme.pokedexHud.ball.whiteDot.background}}></div>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +29,7 @@ export const PokedexHud = ({ children }) => {
                     </div>
                     <ThemeTogglerBtn />
                 </div>
-                <div className='border'>
+                <div className='border' style={{ backgroundColor: theme.pokedexHud.border.background }}>
                     <div className='border-top'>
                         <div className='dots'>
                             <div className='dot'></div>
