@@ -23,7 +23,7 @@ const PokemonInfo = () => {
         return (
             <section className='pokemon-info'>
                 <Link className='link-back' to='/'>
-                    <img className='btn-back' src={arrow} />
+                    <img className='btn-back' src={arrow} alt='Back' />
                 </Link>
                 <div className='overview'>
                     <div className='info-types'>

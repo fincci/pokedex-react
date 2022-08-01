@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const themes = {
     light: {
         main: {
-            background: 'url("../../assets/bg.png") center center no-repeat'
+            background: `url("../../assets/bg.png") center center no-repeat`
         },
         pokedexHud: {
             background: '#ce0627',
@@ -22,11 +22,14 @@ export const themes = {
                 color: '#000',
                 background: '#eee'
             },
+        },
+        pokeCard: {
+            background: 'transparent'
         }
     },
     dark: {
         main: {
-            background: 'url("../../assets/bg-dark.png") center center no-repeat'
+            background: `url('../../assets/bg-dark.png') center center no-repeat`
         },
         pokedexHud: {
             background: '#680213',
@@ -47,8 +50,10 @@ export const themes = {
                 color: '#fff',
                 background: '#303030'
             },
+        },
+        pokeCard: {
+            background: 'transparent'
         }
-
     }
 }
 

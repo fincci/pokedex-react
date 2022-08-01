@@ -1,7 +1,7 @@
 import { ThemeTogglerBtn } from '../theme-toggler-btn/theme-toggler-btn'
-import { ThemeContext, themes } from "../../contexts/theme-context"
-import './pokedex-hud.css'
+import { ThemeContext } from "../../contexts/theme-context"
 import React, { useContext } from 'react'
+import './pokedex-hud.css'
 
 export const PokedexHud = ({ children }) => {
     

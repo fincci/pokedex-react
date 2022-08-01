@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PokeCard } from '../pokemon-card/pokemon-card'
 import { getPokeUrl, getNextPokeUrl } from '../../scripts/services/poke-url'
 import { getPokemonDetails } from '../../scripts/services/pokemon-details'
 import { Button } from '../button/button'
 import { load, limit } from '../../scripts/variables'
+import { ThemeContext } from '../../contexts/theme-context'
 import './poke-list.css'
 
 const PokeList = () => {
@@ -43,6 +44,8 @@ const PokeList = () => {
         setOffset(offset = offset + load)
         setPokemons([...pokemons, ...newPokemons])
     }
+
+    const { theme } = useContext(ThemeContext)
 
     return (
         <section className='pokemons-section'>
