@@ -41,10 +41,10 @@ const PokemonInfo = () => {
                         <img src={pokeInfo.sprites.other.dream_world.front_default} alt={`Imagem de ${pokeInfo.name}`} />
                     </picture>
                     <div className='wrapper-name'>
-                        <h2 className='name'>
+                        <h2 className='info-name'>
                             {`${pokeInfo.name.substring(0, 1).toUpperCase()}${pokeInfo.name.substring(1)}`}
                         </h2>
-                        <span className='id'>
+                        <span className='info-id'>
                             {`#${pokeInfo.id.toString().padStart(3, '0')}`}
                         </span>
                     </div>

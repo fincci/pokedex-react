@@ -1,6 +1,5 @@
 .pokemon-info {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 100%;
@@ -12,7 +11,6 @@
     color: white;
     padding: 20px;
     gap: 20px;
-    position: relative;
 }
 
 .pokemon-info::before {
@@ -92,6 +90,18 @@
     width: 100%;
 }
 
+.info-name {
+    font-size: 25px;
+    font-weight: 400;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.8));
+}
+
+.info-id {
+    opacity: .7;
+    font-size: 12px;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.411));
+}
+
 .infos {
     display: flex;
     flex-direction: column;
@@ -135,6 +145,7 @@
 .ability-name {
     font-size: 15px;
     font-weight: 700;
+    text-justify: inter-word;
 }
 
 .ability-desc {
@@ -157,4 +168,45 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     font-size: 12px;
     gap: 5px;
+}
+
+@media (max-width: 650px) {
+    .pokemon-info {
+        flex-direction: column;
+        overflow-y: scroll;
+        justify-content: flex-start;
+    }
+
+    .overview {
+        width: 100%;
+    }
+
+    .infos {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .abilities {
+        height: 100%;
+        width: 100%;
+    }
+
+    .ability {
+        width: 100%;
+    }
+
+    .moves {
+        height: 100%;
+        width: 100%;
+    }
+
+    .infos-move {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .infos {
+        flex-direction: column;
+    }
 }
