@@ -1,3 +1,7 @@
+.card-border {
+    border-radius: 10px;
+}
+
 .card {
     width: var(--card-size);
     height: var(--card-size);
@@ -9,6 +13,7 @@
     color: white;
     padding: 10px;
     transition: .3s ease-in-out;
+    margin: 4px;
 }
 
 .card .card-header {

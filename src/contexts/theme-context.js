@@ -24,7 +24,10 @@ export const themes = {
             },
         },
         pokeCard: {
-            background: 'transparent'
+            border: {
+                background: 'transparent'
+            },
+            background: 'gradient',
         }
     },
     dark: {
@@ -52,7 +55,10 @@ export const themes = {
             },
         },
         pokeCard: {
-            background: 'transparent'
+            border: {
+                background: 'gradient'
+            },
+            background: 'transparent',
         }
     }
 }

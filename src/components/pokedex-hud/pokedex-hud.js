@@ -8,7 +8,9 @@ export const PokedexHud = ({ children }) => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <main className='main' style={{ background: theme.main.background}}>
+        <main className='main' 
+        // style={{ background: theme.main.background }}
+        >
             <div className='pokedex' style={{ backgroundColor: theme.pokedexHud.background }}>
                 <div className='top-style'>
                     <div className='left-details'>
