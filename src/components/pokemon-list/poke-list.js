@@ -7,6 +7,7 @@ import { Button } from '../button/button'
 import { load, limit } from '../../scripts/variables'
 import { ThemeContext } from '../../contexts/theme-context'
 import './poke-list.css'
+import styled, { css } from 'styled-components'
 
 const PokeList = () => {
 
@@ -48,7 +49,9 @@ const PokeList = () => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <section className='pokemons-section'>
+        <Section theme={theme} 
+        // className='pokemons-section'
+        >
             <ul className={'pokemon-list'}>
                 {
                     pokemons.map((pokemon, index) => {
@@ -61,10 +64,41 @@ const PokeList = () => {
                 }
             </ul>
             <Button addPokemons={addPokemons} />
-        </section>
+        </Section>
     )
 }
 
+const Section = styled.section`
+& {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+&::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    ${props => props.theme && css`
+        background: ${props.theme.pokeList.background} center center no-repeat;
+    `}
+    background-size: cover;
+    border-radius: 10px;
+    z-index: -1;
+    ${props => props.theme && css`
+        filter: ${props.theme.pokeList.filter}
+    `}
+}
+`
 
 
 export { PokeList }

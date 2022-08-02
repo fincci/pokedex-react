@@ -23,16 +23,17 @@ export const themes = {
                 background: '#eee'
             },
         },
+        pokeList: {
+            background: "url('../../assets/pokedexBg.jpg') center center no-repeat;",
+            filter: 'brightness(.8)'
+        },
         pokeCard: {
-            border: {
-                background: 'transparent'
-            },
-            background: 'gradient',
+            background: 'gradient'
         }
     },
     dark: {
         main: {
-            background: `url('../../assets/bg-dark.png') center center no-repeat`
+            background: `url('../../assets/bg-dark.png') center center no-repeat`,
         },
         pokedexHud: {
             background: '#680213',
@@ -54,11 +55,12 @@ export const themes = {
                 background: '#303030'
             },
         },
+        pokeList: {
+            background: '#303030',
+            filter: 'brightness(1)'
+        },
         pokeCard: {
-            border: {
-                background: 'gradient'
-            },
-            background: 'transparent',
+            background: '#303030'
         }
     }
 }

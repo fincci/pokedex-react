@@ -1,5 +1,9 @@
 .card-border {
     border-radius: 10px;
+    width: var(--card-border-size);
+    height: var(--card-border-size);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .card {
@@ -8,12 +12,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     color: white;
     padding: 10px;
     transition: .3s ease-in-out;
-    margin: 4px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
 }
 
 .card .card-header {
@@ -76,6 +81,11 @@
 }
 
 @media (max-width: 1300px) {
+    .card-border {
+        width: calc(var(--card-border-size) - 30px);
+        height: calc(var(--card-border-size) - 30px);
+    }
+
     .card {
         width: calc(var(--card-size) - 30px);
         height: calc(var(--card-size) - 30px);

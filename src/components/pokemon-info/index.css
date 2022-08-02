@@ -54,9 +54,6 @@
     min-width: 250px;
     justify-content: center;
     align-items: center;
-    /* background: url('../../assets/pokeball2.png') center center no-repeat white;
-    background-size: 80%;
-    color: black; */
     border-radius: 10px;
 }
 
@@ -73,7 +70,7 @@
 .info-img-container img {
     width: 100%;
     height: 100%;
-    max-height: 350px;
+    max-height: 200px;
     filter: drop-shadow(20px 10px 4px rgba(0, 0, 0, 0.411));
 }
 
@@ -86,6 +83,7 @@
 
 .info-types .type {
     opacity: 1;
+    padding: 5px 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -154,4 +152,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     font-size: 12px;
     gap: 5px;
+}
+
+@media (max-width: 914) {
+    
 }
