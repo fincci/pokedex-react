@@ -9,7 +9,7 @@ export const PokedexHud = ({ children }) => {
 
     return (
         <main className='main' 
-        // style={{ background: theme.main.background }}
+        style={{ background: theme.main.background }}
         >
             <div className='pokedex' style={{ backgroundColor: theme.pokedexHud.background }}>
                 <div className='top-style'>

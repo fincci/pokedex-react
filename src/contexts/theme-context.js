@@ -1,9 +1,12 @@
 import { createContext, useState } from "react";
+import bg from '../assets/bg.png'
+import bgDark from '../assets/bg-dark.png'
+import pokedexBg from '../assets/pokedexBg.jpg'
 
 export const themes = {
     light: {
         main: {
-            background: `url("../../assets/bg.png") center center no-repeat`
+            background: `url("${bg}") center center no-repeat`
         },
         pokedexHud: {
             background: '#ce0627',
@@ -24,8 +27,11 @@ export const themes = {
             },
         },
         pokeList: {
-            background: "url('../../assets/pokedexBg.jpg') center center no-repeat;",
-            filter: 'brightness(.8)'
+            background: `url("${pokedexBg}") center center no-repeat;`,
+            filter: 'brightness(.8)',
+            btn: {
+                background: 'linear-gradient(45deg, #0255f7 0%, #00e4d1 100%)'
+            }
         },
         pokeCard: {
             background: 'gradient'
@@ -33,7 +39,7 @@ export const themes = {
     },
     dark: {
         main: {
-            background: `url('../../assets/bg-dark.png') center center no-repeat`,
+            background: `url('${bgDark}') center center no-repeat`,
         },
         pokedexHud: {
             background: '#680213',
@@ -57,7 +63,10 @@ export const themes = {
         },
         pokeList: {
             background: '#303030',
-            filter: 'brightness(1)'
+            filter: 'brightness(1)',
+            btn: {
+                background: '#303030'
+            }
         },
         pokeCard: {
             background: '#303030'

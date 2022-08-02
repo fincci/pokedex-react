@@ -1,5 +1,5 @@
 .main {
-    background: url('../../assets/bg.png') center center no-repeat;
+    /* background: url('../../assets/bg.png') center center no-repeat; */
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -8,6 +8,7 @@
 
 .pokedex {
     height: 100%;
+    width: 100%;
     padding: 0px var(--pokedex-border) var(--pokedex-border);
     background-color: #ce0627;
     border-radius: 10px;
@@ -75,7 +76,7 @@
 
 .border {
     width: 100%;
-    height: calc(100% - (2 * var(--list-border)));
+    height: calc(100% - (var(--list-border) * 2));
     padding: 0px var(--list-border);
     background-color: #DEDEDE;
     border-radius: 10px;
@@ -85,9 +86,9 @@
 .border-top {
     display: flex;
     width: 100%;
+    height: var(--list-border);
     justify-content: center;
     align-items: center;
-    height: var(--list-border);
     position: relative;
 }
 
@@ -98,9 +99,9 @@
 .border-bottom {
     display: flex;
     width: 100%;
+    height: var(--list-border);
     justify-content: space-between;
     align-items: center;
-    height: var(--list-border);
 }
 
 .top-dots {

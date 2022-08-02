@@ -23,5 +23,6 @@
     --background-paddingX: 19%;
     --background-paddingY: 5%;
     --card-size: 180px;
-    --card-border-size: 184px
+    --card-border-size: 184px;
+    --top-style-height: 130px;
 }

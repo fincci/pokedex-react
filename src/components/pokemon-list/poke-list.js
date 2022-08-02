@@ -49,9 +49,7 @@ const PokeList = () => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <Section theme={theme} 
-        // className='pokemons-section'
-        >
+        <Section theme={theme}>
             <ul className={'pokemon-list'}>
                 {
                     pokemons.map((pokemon, index) => {
@@ -70,8 +68,8 @@ const PokeList = () => {
 
 const Section = styled.section`
 & {
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
     overflow-y: scroll;
     flex-direction: column;
