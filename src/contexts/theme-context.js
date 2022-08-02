@@ -27,7 +27,7 @@ export const themes = {
             },
         },
         pokeList: {
-            background: `url("${pokedexBg}") center center no-repeat;`,
+            background: `url("${pokedexBg}") center center no-repeat`,
             filter: 'brightness(.8)',
             btn: {
                 background: 'linear-gradient(45deg, #0255f7 0%, #00e4d1 100%)'

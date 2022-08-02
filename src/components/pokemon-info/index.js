@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getPokemon } from '../../scripts/services/poke-url'
 import { Ability } from '../abilities/ability'
 import arrow from '../../assets/arrow.png'
 import './index.css'
+import styled, { css } from 'styled-components'
+import { ThemeContext } from '../../contexts/theme-context'
 
 const PokemonInfo = () => {
 
@@ -19,9 +21,11 @@ const PokemonInfo = () => {
         fetchPokemonData()
     }, [name])
 
+    const { theme } = useContext(ThemeContext)
+
     if (Object.keys(pokeInfo).length !== 0) {
         return (
-            <section className='pokemon-info'>
+            <Section theme={theme} className='pokemon-info'>
                 <Link className='link-back' to='/'>
                     <img className='btn-back' src={arrow} alt='Back' />
                 </Link>
@@ -75,9 +79,45 @@ const PokemonInfo = () => {
                         </ul>
                     </div>
                 </div>
-            </section>
+            </Section>
         )
     }
 }
+
+const Section = styled.section`
+& {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 2px black;
+    z-index: 0;
+    color: white;
+    padding: 20px;
+    gap: 20px;
+}
+
+&::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    ${props => props.theme && css`
+        background: ${props.theme.pokeList.background};
+    `}
+    filter: brightness(50%);
+    background-size: cover;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    ${props => props.theme && css`
+        filter: ${props.theme.pokeList.filter}
+    `}
+}
+`
 
 export { PokemonInfo }

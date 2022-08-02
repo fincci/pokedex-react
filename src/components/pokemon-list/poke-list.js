@@ -87,7 +87,7 @@ const Section = styled.section`
     top: 0px;
     left: 0px;
     ${props => props.theme && css`
-        background: ${props.theme.pokeList.background} center center no-repeat;
+        background: ${props.theme.pokeList.background};
     `}
     background-size: cover;
     border-radius: 10px;

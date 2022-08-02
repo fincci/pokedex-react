@@ -100,7 +100,7 @@
     }
 }
 
-@media (max-width: 535px) {
+/* @media (max-width: 535px) {
     .pokecard-link {
         width: 100%;
     }
@@ -132,4 +132,4 @@
     .name {
         width: 50%;
     }
-}
+} */

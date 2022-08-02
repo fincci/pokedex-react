@@ -195,3 +195,13 @@
     padding: var(--background-paddingY) calc(var(--background-paddingX) - 14%);
     }
 }
+
+@media (max-width: 400px) {
+    .left-details {
+        gap: 5px;
+    }
+
+    .top-dots {
+        gap: 10px;
+    }
+}

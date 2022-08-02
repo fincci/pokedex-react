@@ -8,8 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin: 10px;
     gap: 20px;
+}
+
+.pokecard-link {
+    width: fit-content;
 }
 
 ::-webkit-scrollbar {
