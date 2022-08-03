@@ -6,8 +6,8 @@ import { getPokemonDetails } from '../../scripts/services/pokemon-details'
 import { Button } from '../button/button'
 import { load, limit } from '../../scripts/variables'
 import { ThemeContext } from '../../contexts/theme-context'
-import './poke-list.css'
 import styled, { css } from 'styled-components'
+import './poke-list.css'
 
 const PokeList = () => {
 
@@ -97,6 +97,5 @@ const Section = styled.section`
     `}
 }
 `
-
 
 export { PokeList }

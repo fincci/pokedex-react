@@ -108,14 +108,13 @@ const Section = styled.section`
     ${props => props.theme && css`
         background: ${props.theme.pokeList.background};
     `}
-    filter: brightness(50%);
     background-size: cover;
     border-radius: 10px;
     height: 100%;
     width: 100%;
     z-index: -1;
     ${props => props.theme && css`
-        filter: ${props.theme.pokeList.filter}
+        filter: ${props.theme.pokeList.filter};
     `}
 }
 `

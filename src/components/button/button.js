@@ -7,7 +7,9 @@ const Button = (props) => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <button style={{ background: theme.pokeList.btn.background }} className={'btn'} onClick={ () => props.addPokemons() }>Show more</button>
+        <div className='btn-border'>
+            <button style={{ background: theme.pokeList.btn.background }} className={'btn'} onClick={() => props.addPokemons()}>Show more</button>
+        </div>
     )
 }
 
