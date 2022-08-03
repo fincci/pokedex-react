@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     padding: var(--background-paddingY) var(--background-paddingX);
+    transition: .3s ease-in-out;
 }
 
 .pokedex {

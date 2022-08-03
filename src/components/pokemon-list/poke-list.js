@@ -15,6 +15,8 @@ const PokeList = () => {
 
     let [offset, setOffset] = useState(load)
 
+    console.log('render');
+
     useEffect(() => {
         const fetchData = async () => {
             const pokeArray = await getPokeUrl(limit)
