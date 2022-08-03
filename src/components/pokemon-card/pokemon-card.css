@@ -99,37 +99,3 @@
         max-height: 75px;
     }
 }
-
-/* @media (max-width: 535px) {
-    .pokecard-link {
-        width: 100%;
-    }
-    
-    .card {
-        width: 100%;
-        margin: 0;
-        align-items: baseline;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    .id {
-        position: absolute;
-        right: 10px;
-    }
-
-    .type {
-        padding: 5px 10px;
-    }
-
-    .img-container {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .name {
-        width: 50%;
-    }
-} */
