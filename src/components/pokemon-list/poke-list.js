@@ -92,9 +92,7 @@ const Section = styled.section`
     background-size: cover;
     border-radius: 10px;
     z-index: -1;
-    ${props => props.theme && css`
-        filter: ${props.theme.pokeList.filter}
-    `}
+    filter: 100%;
 }
 `
 
