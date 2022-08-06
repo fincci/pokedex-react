@@ -23,6 +23,8 @@ const PokemonInfo = () => {
 
     const { theme } = useContext(ThemeContext)
 
+    console.log(pokeInfo);
+
     if (Object.keys(pokeInfo).length !== 0) {
         return (
             <Section theme={theme} className='pokemon-info'>

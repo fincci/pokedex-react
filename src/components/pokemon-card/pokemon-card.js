@@ -1,6 +1,23 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../../contexts/theme-context'
+import { Howl } from 'howler';
+import clickSound from '../../assets/clickSound.mp3'
+import hoverSound from '../../assets/hover6.mp3'
 import './pokemon-card.css'
+
+const click = new Howl({
+    src: [clickSound],
+    html5: true,
+    preload: true,
+    volume: 0.1
+})
+
+const hover = new Howl({
+    src: [hoverSound],
+    html5: true,
+    preload: true,
+    volume: 0.3
+})
 
 const PokeCard = ({ pokeInfo, index }) => {
 
@@ -26,11 +43,10 @@ const PokeCard = ({ pokeInfo, index }) => {
         }
     }, [])
 
-
     if (bgGradient.length || bgFlat !== 0) {
         const gradient = pokeInfo.types.length === 1 ? bgFlat : `linear-gradient(90deg,${bgGradient})`
         return (
-            <li key={index} className='card-border' style={{ background: gradient }}>
+            <li onMouseEnter={() => hover.play()} onClick={() => click.play()} key={index} className='card-border' style={{ background: gradient }}>
                 <div className='card' style={theme.pokeCard.background === 'gradient' ? { background: eval(theme.pokeCard.background) } : { background: theme.pokeCard.background }}>
                     <div className='card-header'>
                         <div className='types'>
