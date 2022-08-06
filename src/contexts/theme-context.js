@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
-import bg from '../assets/bg.png'
-import bgDark from '../assets/bg-dark.png'
-import pokedexBg from '../assets/pokedexBg.jpg'
+import bg from '../assets/images/bg.png'
+import bgDark from '../assets/images/bg-dark.png'
+import pokedexBg from '../assets/images/pokedexBg.jpg'
 
 export const themes = {
     light: {
@@ -34,7 +34,12 @@ export const themes = {
             }
         },
         pokeCard: {
-            background: 'gradient'
+            background: 'gradient',
+            types: {
+                border: '',
+                background: '#fff',
+                color: '#000'
+            }
         }
     },
     dark: {
@@ -69,7 +74,12 @@ export const themes = {
             }
         },
         pokeCard: {
-            background: '#303030'
+            background: '#303030',
+            types: {
+                border: 'typeColor',
+                background: '#303030',
+                color: '#fff'
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../../contexts/theme-context'
 import { Howl } from 'howler';
-import clickSound from '../../assets/clickSound.mp3'
-import hoverSound from '../../assets/hover6.mp3'
+import clickSound from '../../assets/sounds/clickSound.mp3'
+import hoverSound from '../../assets/sounds/hoverSound.mp3'
 import './pokemon-card.css'
 
 const click = new Howl({
@@ -52,8 +52,14 @@ const PokeCard = ({ pokeInfo, index }) => {
                         <div className='types'>
                             {
                                 pokeInfo.types.map((types, index) => {
+                                    const typeColor = `solid 2px var(--${types.type.name})`
                                     return (
-                                        <span className={'type'} key={index}>
+                                        <span style={{
+                                            background: theme.pokeCard.types.background, 
+                                            color: theme.pokeCard.types.color,
+                                            border: eval(theme.pokeCard.types.border)
+                                        }} 
+                                        className={'type'} key={index}>
                                             {types.type.name.substring(0, 1).toUpperCase()}{types.type.name.substring(1)}
                                         </span>
                                     )
