@@ -26,16 +26,18 @@ const P = styled.p`
             background-color: ${props.theme.pokedexHud.btn.background};
             color: ${props.theme.pokedexHud.btn.color};
         `}
-        padding: 5px;
+        padding: 5px 10px;
         opacity: .3;
         animation: wiggle .5s infinite alternate;
         transition: .3s;
+        border-radius: 10px;
+        border: solid 2px;
     }
     
     &::before {
         content: '';
         position: absolute;
-        top: -5px;
+        top: -7px;
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
         width: 10px;
@@ -44,6 +46,8 @@ const P = styled.p`
             background-color: ${props.theme.pokedexHud.btn.background};
         `}
         transition: .3s;
+        border-top: solid 2px;
+        border-left: solid 2px;
     }`
 
 const ThemeToggler = styled.div`
