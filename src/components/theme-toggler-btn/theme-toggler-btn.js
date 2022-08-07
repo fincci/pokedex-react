@@ -22,6 +22,7 @@ const P = styled.p`
         position: relative;
         font-size: 15px;
         display: block;
+        text-align: center;
         ${props => props.theme && css`
             background-color: ${props.theme.pokedexHud.btn.background};
             color: ${props.theme.pokedexHud.btn.color};
