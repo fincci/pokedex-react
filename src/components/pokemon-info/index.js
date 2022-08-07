@@ -88,7 +88,6 @@ const Section = styled.section`
 & {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     height: 100%;
     width: 100%;
     background-size: cover;
