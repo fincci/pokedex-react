@@ -31,7 +31,7 @@ const P = styled.p`
         animation: wiggle .5s infinite alternate;
         transition: .3s;
         border-radius: 10px;
-        border: solid 2px;
+        border: solid 2px #000;
     }
     
     &::before {
@@ -46,8 +46,8 @@ const P = styled.p`
             background-color: ${props.theme.pokedexHud.btn.background};
         `}
         transition: .3s;
-        border-top: solid 2px;
-        border-left: solid 2px;
+        border-top: solid 2px #000;
+        border-left: solid 2px #000;
     }`
 
 const ThemeToggler = styled.div`
