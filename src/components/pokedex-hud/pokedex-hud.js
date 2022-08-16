@@ -4,21 +4,21 @@ import React, { useContext } from 'react'
 import './pokedex-hud.css'
 
 export const PokedexHud = ({ children }) => {
-    
+
     const { theme } = useContext(ThemeContext)
 
     return (
-        <main className='main' 
-        style={{ background: theme.main.background }}
+        <main className='main'
+            style={{ background: theme.main.background }}
         >
             <div className='pokedex' style={{ backgroundColor: theme.pokedexHud.background }}>
                 <div className='top-style'>
                     <div className='left-details'>
                         <div className='ball-border' style={{ backgroundColor: theme.pokedexHud.border.background }}>
-                            <div className='ball-dot' style={{ backgroundColor: theme.pokedexHud.ball.background}}>
-                                <div className='ball-shadow' style={{ backgroundColor: theme.pokedexHud.ball.ballShadow.background, justifyContent: theme.pokedexHud.ball.justify}}>
-                                    <div className='ball-inside' style={{ backgroundColor: theme.pokedexHud.ball.background, justifyContent: theme.pokedexHud.ball.justify}}>
-                                        <div className='ball-white-dot' style={{ backgroundColor: theme.pokedexHud.ball.whiteDot.background}}></div>
+                            <div className='ball-dot' style={{ backgroundColor: theme.pokedexHud.ball.background }}>
+                                <div className='ball-shadow' style={{ backgroundColor: theme.pokedexHud.ball.ballShadow.background, justifyContent: theme.pokedexHud.ball.justify }}>
+                                    <div className='ball-inside' style={{ backgroundColor: theme.pokedexHud.ball.background, justifyContent: theme.pokedexHud.ball.justify }}>
+                                        <div className='ball-white-dot' style={{ backgroundColor: theme.pokedexHud.ball.whiteDot.background }}></div>
                                     </div>
                                 </div>
                             </div>
