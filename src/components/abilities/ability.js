@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getAbility } from '../../scripts/services/poke-url'
+import { getAbilities } from '../../scripts/services/poke-url'
 
 const Ability = ({ pokemon, index }) => {
 
@@ -7,7 +7,7 @@ const Ability = ({ pokemon, index }) => {
 
     useEffect(() => {
         const fetchAbility = async () => {
-            const abilityInfo = await getAbility(pokemon.ability.url)
+            const abilityInfo = await getAbilities(pokemon.ability.url)
             setAbility(abilityInfo)
         }
         fetchAbility()

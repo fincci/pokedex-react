@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PokeCard } from '../pokemon-card/pokemon-card'
-import { getPokeUrl, getNextPokeUrl } from '../../scripts/services/poke-url'
+import { getPokemons } from '../../scripts/services/poke-url'
 import { getPokemonDetails } from '../../scripts/services/pokemon-details'
 import { Button } from '../button/button'
 import { load, limit } from '../../scripts/variables'
@@ -12,45 +12,29 @@ import './poke-list.css'
 const PokeList = () => {
 
     const [pokemons, setPokemons] = useState([])
-
-    let [offset, setOffset] = useState(load)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const pokeArray = await getPokeUrl(limit)
-            const pokemonsDetails = pokeArray.results.map(async (pokemon) => {
-                return await getPokemonDetails(pokemon.url)
-            })
-            const pokemonsList = await Promise.all(pokemonsDetails)
-            setPokemons(pokemonsList)
-        }
-        fetchData()
-    }, [])
-
-    const [newPokemons, setNewPokemons] = useState([])
+    let [offset, setOffset] = useState(0)
 
     useEffect(() => {
         const fetchNewData = async () => {
-            const pokeArray = await getNextPokeUrl(offset, limit)
-            const pokemonsDetails = pokeArray.results.map(async (pokemon) => {
+            const pokeArray = await getPokemons(offset, limit)
+            const pokemonsDetails = pokeArray.map(async (pokemon) => {
                 return await getPokemonDetails(pokemon.url)
             })
-            const pokemonsList = await Promise.all(pokemonsDetails)
-            setNewPokemons(pokemonsList)
+            const newPokemons = await Promise.all(pokemonsDetails)
+            setPokemons([...pokemons, ...newPokemons])
         }
         fetchNewData()
     }, [offset])
 
     function addPokemons() {
         setOffset(offset = offset + load)
-        setPokemons([...pokemons, ...newPokemons])
     }
 
     const { theme } = useContext(ThemeContext)
 
     return (
         <Section theme={theme}>
-            <ul className={'pokemon-list'}>
+            <ul className='pokemon-list'>
                 {
                     pokemons.map((pokemon, index) => {
                         return (

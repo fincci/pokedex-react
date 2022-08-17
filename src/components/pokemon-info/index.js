@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getPokemon } from '../../scripts/services/poke-url'
+import { getPokemonByName } from '../../scripts/services/poke-url'
 import { Ability } from '../abilities/ability'
 import arrow from '../../assets/images/arrow.png'
 import './index.css'
@@ -15,7 +15,7 @@ const PokemonInfo = () => {
 
     useEffect(() => {
         const fetchPokemonData = async () => {
-            const info = await getPokemon(name)
+            const info = await getPokemonByName(name)
             setPokeInfo(info)
         }
         fetchPokemonData()
